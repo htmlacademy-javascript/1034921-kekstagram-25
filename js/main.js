@@ -8,3 +8,9 @@ const getRandomInt = function(min, max) {
 };
 
 getRandomInt(0, 5);
+
+const isStringMaxLength = function(text, maxLength) {
+  return text.length <= maxLength;
+};
+
+isStringMaxLength('ab', 2);
