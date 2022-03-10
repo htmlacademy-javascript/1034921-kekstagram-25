@@ -12,9 +12,9 @@ const isStringMaxLength = function(text, maxLength) {
   return text.length <= maxLength;
 };
 
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomInt(0, elements.length - 1)];
-};
+isStringMaxLength('text', 5);
+
+const getRandomArrayElement = (elements) => elements[getRandomInt(0, elements.length - 1)];
 
 // источник: https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array
 const getRandomArrayElements = (elements) => {
