@@ -1,4 +1,4 @@
-import {generateData} from './data';
+import {generateData} from './data.js';
 
 const pictures = document.querySelector('.pictures');
 const templateFragment = document.querySelector('#picture').content;
@@ -18,3 +18,4 @@ elements.forEach(({url, likes, comments}) => {
 });
 
 pictures.appendChild(fragment);
+
