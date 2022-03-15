@@ -51,7 +51,7 @@ const generateData = () => Array.from({length: DATA_LENGTH}, (value, item) => {
   const likes = getRandomInt(15, 200);
   return {
     id,
-    url: ['photos/{{', id, '}}.jpg'].join(''),
+    url: ['photos/', id, '.jpg'].join(''),
     description: getRandomArrayElement(COMMENT_DESC),
     likes, // равнозначно likes: likes
     comments: getRandomArrayElements(generateComments),
