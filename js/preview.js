@@ -16,7 +16,7 @@ elements.forEach((dataItem) => {
   pictureImg.src = url;
   pictureLikes.textContent = likes;
   pictureComments.textContent = comments.length;
-  clickElement(element);
+  clickElement(element, dataItem);
   fragment.appendChild(element);
 });
 
