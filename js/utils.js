@@ -22,9 +22,13 @@ const getRandomArrayElements = (elements) => {
   return shuffled.slice(0, getRandomInt(1, elements.length - 1));
 };
 
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+
 export {
   getRandomInt,
   getRandomArrayElement,
-  getRandomArrayElements
+  getRandomArrayElements,
+  isEscapeKey
 };
 
