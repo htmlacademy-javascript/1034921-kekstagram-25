@@ -1,1 +1,7 @@
-import './preview.js';
+import {generateData} from './data.js';
+import {renderPhotos} from './pictures.js';
+import {makeGalleryInteractive} from './gallery.js';
+
+const pictures = generateData();
+renderPhotos(pictures);
+makeGalleryInteractive(pictures);

@@ -37,10 +37,10 @@ const COMMENT_DESC = [
 
 const generateComments = Array.from({length: COMMENTS_LENGTH}, (value, item) => {
   const id = item + 1;
-  const randomAvator = getRandomInt(1, 6);
+  const randomAvatar = getRandomInt(1, 6);
   return {
     id,
-    avatar: ['img/avatar-', randomAvator, '.svg'].join(''),
+    avatar: ['img/avatar-', randomAvatar, '.svg'].join(''),
     message: getRandomArrayElement(USER_COMMENTS),
     name: getRandomArrayElement(USER_NAMES)
   };
