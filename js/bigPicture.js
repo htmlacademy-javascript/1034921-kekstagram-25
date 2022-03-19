@@ -33,11 +33,4 @@ function closeBigPicture () {
   document.removeEventListener('keydown', onElementEscKeydown);
 };
 
-const clickElement = (element, description) => {
-  element.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    openBigPicture(bigPicture, description);
-  });
-};
-
-export {clickElement};
+export {openBigPicture, closeBigPicture};
