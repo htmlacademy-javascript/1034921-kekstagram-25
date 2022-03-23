@@ -2,9 +2,9 @@ import {openBigPicture, closeBigPicture} from './bigPicture.js';
 
 function addHandlerToPicture(picture, data) {
   const pictureImg = picture.querySelector('.picture__img');
-  const bigPictureCancel = picture.querySelector('.big-picture__cancel');
+  const bigPictureCancel = document.querySelector('.big-picture__cancel');
   pictureImg.addEventListener('click', () => openBigPicture(data));
-  document.addEventListener('click', () => closeBigPicture());
+  bigPictureCancel.addEventListener('click', () => closeBigPicture());
   document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape') {
       closeBigPicture();
