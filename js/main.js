@@ -1,7 +1,7 @@
 import {generateData} from './data.js';
-import {renderPhotos} from './pictures.js';
+import {renderPictures} from './pictures.js';
 import {makeGalleryInteractive} from './gallery.js';
 
 const pictures = generateData(25);
-renderPhotos(pictures);
+renderPictures(pictures);
 makeGalleryInteractive(pictures);

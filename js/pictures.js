@@ -3,7 +3,7 @@ const templateFragment = document.querySelector('#picture').content;
 const template = templateFragment.querySelector('.picture');
 const fragment = document.createDocumentFragment();
 
-function addPictureToFragment({url, likes, comments}) {
+const addPictureToFragment = ({url, likes, comments}) => {
   const element = template.cloneNode(true);
   const pictureImg = element.querySelector('.picture__img');
   const pictureLikes = element.querySelector('.picture__likes');
@@ -12,11 +12,11 @@ function addPictureToFragment({url, likes, comments}) {
   pictureLikes.textContent = likes;
   pictureComments.textContent = comments.length;
   fragment.appendChild(element);
-}
+};
 
-function renderPhotos(photos) {
+const renderPictures = (photos) => {
   photos.forEach(addPictureToFragment);
   pictures.appendChild(fragment);
 };
 
-export {renderPhotos};
+export {renderPictures};
