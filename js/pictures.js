@@ -1,12 +1,9 @@
-import {generateData} from './data.js';
-
 const pictures = document.querySelector('.pictures');
 const templateFragment = document.querySelector('#picture').content;
 const template = templateFragment.querySelector('.picture');
 const fragment = document.createDocumentFragment();
-const elements = generateData();
 
-elements.forEach(({url, likes, comments}) => {
+const addPictureToFragment = ({url, likes, comments}) => {
   const element = template.cloneNode(true);
   const pictureImg = element.querySelector('.picture__img');
   const pictureLikes = element.querySelector('.picture__likes');
@@ -15,7 +12,11 @@ elements.forEach(({url, likes, comments}) => {
   pictureLikes.textContent = likes;
   pictureComments.textContent = comments.length;
   fragment.appendChild(element);
-});
+};
 
-pictures.appendChild(fragment);
+const renderPictures = (photos) => {
+  photos.forEach(addPictureToFragment);
+  pictures.appendChild(fragment);
+};
 
+export {renderPictures};

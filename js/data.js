@@ -37,25 +37,27 @@ const COMMENT_DESC = [
 
 const generateComments = Array.from({length: COMMENTS_LENGTH}, (value, item) => {
   const id = item + 1;
-  const randomAvator = getRandomInt(1, 6);
+  const randomAvatar = getRandomInt(1, 6);
   return {
-    id, // равнозначно id: id
-    avatar: ['img/avatar-', randomAvator, '.svg'].join(''),
+    id,
+    avatar: ['img/avatar-', randomAvatar, '.svg'].join(''),
     message: getRandomArrayElement(USER_COMMENTS),
     name: getRandomArrayElement(USER_NAMES)
   };
 });
 
-const generateData = () => Array.from({length: DATA_LENGTH}, (value, item) => {
-  const id = item + 1;
+const dataItem = (value, index) => {
+  const id = index + 1;
   const likes = getRandomInt(15, 200);
   return {
     id,
     url: ['photos/', id, '.jpg'].join(''),
     description: getRandomArrayElement(COMMENT_DESC),
-    likes, // равнозначно likes: likes
+    likes,
     comments: getRandomArrayElements(generateComments),
   };
-});
+};
+
+const generateData = () => Array.from({length: DATA_LENGTH}, dataItem);
 
 export {generateData};
