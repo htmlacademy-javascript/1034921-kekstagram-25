@@ -77,6 +77,6 @@ function closeBigPicture () {
   loadMore.removeEventListener('click', onLoadMoreClick);
   bigPicture.classList.add('hidden');
   document.querySelector('body').classList.remove('modal-open');
-};
+}
 
 export {openBigPicture, closeBigPicture};
