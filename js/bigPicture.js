@@ -1,3 +1,5 @@
+import {isEscapeKey} from './utils.js';
+
 const bigPicture = document.querySelector('.big-picture');
 const bigPictureCancel = document.querySelector('.big-picture__cancel');
 const templateComment = bigPicture.querySelector('.social__comment');
@@ -9,6 +11,17 @@ const COMMENTS_LOAD_STEP = 5;
 
 let pictureComments = [];
 let pictureCommentsLength = 0;
+
+const onBigPictureEscKeydown = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeBigPicture();
+  }
+};
+
+const onBigPictureCancelClick = () => {
+  closeBigPicture();
+};
 
 const fillComment = ({name, avatar, message}) => {
   const comment = templateComment.cloneNode(true);
@@ -58,14 +71,11 @@ const openBigPicture = ({url, description, likes, comments}) => {
   loadMore.addEventListener('click', onLoadMoreClick);
 };
 
-const onBigPictureCancelClick = () => {
-  closeBigPicture();
-};
-
-const closeBigPicture = () => {
-  bigPicture.classList.add('hidden');
+function closeBigPicture () {
+  document.removeEventListener('keydown', onBigPictureEscKeydown);
   bigPictureCancel.removeEventListener('click', onBigPictureCancelClick);
   loadMore.removeEventListener('click', onLoadMoreClick);
+  bigPicture.classList.add('hidden');
   document.querySelector('body').classList.remove('modal-open');
 };
 
