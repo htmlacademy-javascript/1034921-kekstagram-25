@@ -5,7 +5,7 @@ import {
 } from './utils.js';
 
 const DATA_LENGTH = 25;
-const COMMENTS_LENGTH = 2;
+const COMMENTS_LENGTH = 12;
 
 const USER_NAMES = [
   'Иван',
